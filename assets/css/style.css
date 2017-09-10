@@ -1,14 +1,16 @@
 /*==============*/
 /*HEADER AND NAV*/
 /*==============*/
-
-
+#searchBar {
+	margin-right: 10px;
+}
 
 /*============*/
 /*MAIN CONTENT*/
 /*============*/
-
-
+#main-content {
+	margin-top: 50px;
+}
 
 /*======*/
 /*FOOTER*/
