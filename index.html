@@ -47,6 +47,7 @@
 						<a class="collapsible-header">Systems<i class="material-icons">arrow_drop_down</i></a>
 						<div class="collapsible-body">
 							<ul>
+								<li class="divider"></li>
 								<li><a href="#!">PC</a></li>
 								<li class="divider"></li>
 								<li><a href="#!">PS4</a></li>
@@ -72,6 +73,7 @@
 						<a class="collapsible-header">Genre<i class="material-icons">arrow_drop_down</i></a>
 						<div class="collapsible-body">
 							<ul>
+								<li class="divider"></li>
 								<li><a href="#!">Action</a></li>
 								<li class="divider"></li>
 								<li><a href="#!">Adventure</a></li>
@@ -106,6 +108,13 @@
 							</ul>
 						</div>
 					</li>
+
+					<li>
+						<div class="chip chip-padding">
+							Tag
+							<i class="close material-icons">close</i>
+						</div>
+					</li>
 				</ul>
 			</li>
 		</ul>
@@ -113,28 +122,31 @@
 	<!-- NAV BAR END-->
 
 	<!-- CONTAINER -->
+		<div class="parallax-container">
+			<div class="parallax"><img src="assets/images/darkness.png"></div>
+		</div>
 		<div id="main-content" class="container">
 	<!-- ROW: GAME MEDIA -->
 			<div class="row">
 				<h3 id="game-title">[Game Title]</h3>
 			<!-- GAME IMAGE -->
-				<div class="col l4 m4">
-					<img src="assets/images/placeholder.jpg" width="100%">
+				<div class="col l3 m3">
+					<img src="assets/images/metroexodus.jpg" width="100%">
 				</div>
 			<!-- GAME VIDEO -->
-				<div class="col l8 m8">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/waVzdltWLg4" frameborder="0" allowfullscreen></iframe>
+				<div class="col l7 m7">
+					<div class="video-container">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/fbbqlvuovQ0" frameborder="0" allowfullscreen></iframe>
+					</div>
 				</div>
-	<!-- GAME MEDIA END -->
-
-	<!-- ROW: RATING -->
-			<!-- RATING -->
-			<div class="row"></div>
-				<div class="col l12 m12">
+			<!-- RATING END-->
+				<div class="col l2 m2">
+					<div class="progress">
+						<div class="determinate" style="width: 70%"></div>
+					</div>
 					<h5>Rating</h5>
 				</div>
-			</div>
-	<!-- RATING END-->
+	<!-- GAME MEDIA END -->
 
 	<!-- ROW: GAME INFO -->
 			<div class="row">
@@ -160,7 +172,7 @@
 						<li>
 							<div class="collapsible-header"><i class="material-icons">videogame_asset</i>Videos</div>
 							<div class="collapsible-body"><span>
-								<iframe width="560" height="315" src="https://www.youtube.com/embed/waVzdltWLg4" frameborder="0" allowfullscreen></iframe>
+								
 							</span></div>
 						</li>
 					</ul>
@@ -171,7 +183,7 @@
 	<!-- CONTAINER END -->
 
 	<!-- ROW: OTHER LINKS -->
-		<div class="container">
+		<div id="other-content" class="container">
 			Popular
 			Recently Released
 			Recommendations
@@ -186,6 +198,7 @@
 		<!-- Materialize JS -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 		<!-- Javascript -->
+		<script type="text/javascript" src="assets/javascript/initialize.js"></script>
 		<script type="text/javascript" src="assets/javascript/navbar.js"></script>
 		<script type="text/javascript" src="assets/javascript/app.js"></script>
 	</body>
