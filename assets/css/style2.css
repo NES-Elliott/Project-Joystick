@@ -1,17 +1,25 @@
 /*==============*/
 /*HEADER AND NAV*/
 /*==============*/
-#searchBar {
-	margin-right: 10px;
+.chip-padding {
+	padding-left: 50px;
 }
-
 /*============*/
 /*MAIN CONTENT*/
 /*============*/
+.parallax-container {
+	height: 250px;
+}
 #main-content {
 	margin-top: 50px;
+	padding-left: 50px;
 }
-
+#game-title {
+	text-align: left;
+}
+#other-content {
+	padding-left: 50px;
+}
 /*======*/
 /*FOOTER*/
 /*======*/
