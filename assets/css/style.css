@@ -11,6 +11,11 @@
 .parallax-container {
 	height: 250px;
 }
+
+.carousel-item{
+	height: 500px;
+	width: 500px;
+}
 #main-content {
 	margin-top: 50px;
 	padding-left: 50px;
