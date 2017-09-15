@@ -7,7 +7,7 @@
 #searchBar {
 	margin-right: 10px;
 }
->>>>>>> c1542444c37e4f9066cf6ea1fde42b7e12807acb
+
 .chip-padding {
 	padding-left: 50px;
 }
@@ -16,19 +16,18 @@
 /*============*/
 .parallax-container {
 	height: 250px;
+
+
 }
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> c1542444c37e4f9066cf6ea1fde42b7e12807acb
 #main-content {
 	margin-top: 50px;
 	padding-left: 50px;
 }
 #game-title {
-	text-align: left;
+	text-align: center;
 }
 #other-content {
 	padding-left: 50px;
