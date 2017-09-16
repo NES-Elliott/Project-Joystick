@@ -1,35 +1,65 @@
 $(document).ready(function(){
+	// GLOBAL VARIABLES
 	var platform;
-	var queryURL
+	var queryURL;
 
+	// FUNCTIONS
+	function addChip() {
+		$("#chips-platform").html(
+			"<div class='chip chip-padding'>" + platform.charAt(0).toUpperCase() + platform.slice(1) + "<i class='close material-icons'>close</i></div>"
+		);
+	}
+
+	// ON CLICK
 	$(".carousel-item").on("click", function () {
 		platform = $(this).attr("value");
 		queryURL = "https://rcb-igdb.herokuapp.com/platform/" + platform;
-		console.log(platform);
-		console.log(queryURL);
-		$("#chips-platform").html(
-			"<div class='chip chip-padding'>" + platform + "<i class='close material-icons'>close</i></div>"
-		);
-		$("#platform-collection").html("");
-		var newCollection = $("<ul>").attr("class", "collection");
-		$("#platform-collection").append(newCollection);
 
+		// console.log(platform);
+		// console.log(queryURL);
+		addChip();
+		//Clear div, then create the collapsible
+		$("#platform-collapsible").html("");
+		var newCollapsible = $("<ul>").attr({class: "collapsible", 'data-collapsible': "accordion"});
+		$("#platform-collapsible").append(newCollapsible);
+		//Ajax call for platform endpoint
 		$.ajax({
 			url: queryURL,
 			method: "GET"
 		}).done(function(response) {
+
 			console.log(response);
-			for (var i = 0; i < response.body.length; i++) {
-				if ("logo" in response.body[i]) {
-					console.log(response.body[i].logo.url);
-					var newCollectionItem = $("<li>").attr("class", "collection-item")
-					newCollection.append(newCollectionItem);
-					newCollectionItem.text(response.body[i].name)
-					//newCarouselItem.html("<img src=" + response.body[i].logo.url + " width='100%'>");
-				} else {
-					console.log("no url")
+
+			for (var a = 0; a < response.body.length; a++) { //Cycles through the different systems of that platform
+				//Creates the Collapsible from MaterializeCSS
+				var newCollapsibleItem = $("<li>")
+				var newCollapsibleHeader = $("<div>").attr({class: "collapsible-header"}).text(response.body[a].name).appendTo(newCollapsibleItem);
+				var newCollapsibleBody = $("<div>").attr({class: "collapsible-body"}).appendTo(newCollapsibleItem);
+				var newCollection = $("<div>").attr({class: "collection"}).appendTo(newCollapsibleBody);
+				newCollapsible.append(newCollapsibleItem);
+				// Acquires GameIDs for Ajax call to hit games endpoint
+				var gameIds = [];
+				for(var b = 0; b < response.body[a].games.length; b++) {
+					gameIds.push(response.body[a].games[b]);
 				}
+				$.ajax({
+					url: "https://rcb-igdb.herokuapp.com/games/" + JSON.stringify(gameIds.slice(0, 10).join()),
+					method: "GET",
+				}).done(function(response){
+					console.log(response);
+					for (var c = 0; c < 10; c++) {
+						var newCollectionItem = $("<a>").attr({class: "collection-item", href: "#!", value: JSON.stringify(gameIds[c])}).text(response.body[c].name);
+						newCollection.append(newCollectionItem);
+					}
+				})
 			}
+	$('.chips').on('chip.delete', function(e, chip){
+	// you have the deleted chip here
+	});
+	//Initialize Collasible
+			$(document).ready(function(){
+				$('.collapsible').collapsible();
+			});
 		})
 	})
 
@@ -38,7 +68,12 @@ $(document).ready(function(){
 // <i class="close material-icons">close</i>
 // </div>
 
-
+				
+				// if ("logo" in response.body[i]) {	
+				// 	newImg = $("<img>").attr({src: "response.body[i].logo.url", width:"100%"})
+				// } else {
+				// 	console.log("no url")
+				// }
 
 
 	// platform = xbox
