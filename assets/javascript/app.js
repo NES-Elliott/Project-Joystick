@@ -1,11 +1,14 @@
 $(document).ready(function(){
 	var platform;
-	$(".carousel-item .active").on("click", function(event) {
+	// $("a").on("click", function(event) {
+	$("a").dblclick(function() {
 		event.preventDefault()
+		var href = $(this).attr('href');
 
 		platform = $(this).val()
-		console.log(platform)
-		window.location.href = "gamepage.html?"+ platform + "=";
+		console.log(href)
+		// window.location.href = "gamepage.html?"+ p + "=";
+		window.location.href = href + "?" + platform + "="
 		var searchCon = window.location.search;
 		
 		console.log(searchCon);
