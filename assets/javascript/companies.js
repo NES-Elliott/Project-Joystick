@@ -27,7 +27,6 @@ $(document).ready(function(){
 			url: queryURL,
 			method: "GET"
 		}).done(function(response) {
-
 			console.log(response);
 
 			for (var a = 0; a < response.body.length; a++) { //Cycles through the different systems of that platform
@@ -42,17 +41,30 @@ $(document).ready(function(){
 				for(var b = 0; b < response.body[a].games.length; b++) {
 					gameIds.push(response.body[a].games[b]);
 				}
+
 				$.ajax({
 					url: "https://rcb-igdb.herokuapp.com/games/" + JSON.stringify(gameIds.slice(0, 10).join()),
 					method: "GET",
 				}).done(function(response){
 					console.log(response);
+
 					for (var c = 0; c < 10; c++) {
+
 						var newCollectionItem = $("<a>").attr({class: "collection-item", href: "gamepage.html", value: JSON.stringify(gameIds[c])}).text(response.body[c].name);
+
+						var newCollectionItem = $("<a>").attr({class: "collection-item", href: "gamepage.html", value: JSON.stringify(response.body[c].id)}).text(response.body[c].name);
+
 						newCollection.append(newCollectionItem);
 					}
 				})
 			}
+	$("body").on("click", ".collection-item", function() {
+		sessionStorage.setItem("ID", $(this).attr("value"));
+
+	})
+
+	
+
 	$('.chips').on('chip.delete', function(e, chip){
 	// you have the deleted chip here
 	});
