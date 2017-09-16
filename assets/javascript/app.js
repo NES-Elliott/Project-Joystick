@@ -1,11 +1,9 @@
 $(document).ready(function(){
-	var platform;
-	// $("a").on("click", function(event) {
-	$("a").dblclick(function() {
+	 $("a").dblclick(function() {
 		event.preventDefault()
 		var href = $(this).attr('href');
 
-		platform = $(this).val()
+		var platform = $(this).val()
 		console.log(href)
 		// window.location.href = "gamepage.html?"+ p + "=";
 		window.location.href = href + "?" + platform + "="
@@ -15,6 +13,10 @@ $(document).ready(function(){
 		//var platform = "playstation";
 	
 	 });
+
+	console.log(platform)
+
+	console.log(this)
 
 	
 	var searchCon = window.location.search
