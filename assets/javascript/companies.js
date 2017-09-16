@@ -48,7 +48,7 @@ $(document).ready(function(){
 				}).done(function(response){
 					console.log(response);
 					for (var c = 0; c < 10; c++) {
-						var newCollectionItem = $("<a>").attr({class: "collection-item", href: "#!", value: JSON.stringify(gameIds[c])}).text(response.body[c].name);
+						var newCollectionItem = $("<a>").attr({class: "collection-item", href: "gamepage.html", value: JSON.stringify(gameIds[c])}).text(response.body[c].name);
 						newCollection.append(newCollectionItem);
 					}
 				})
@@ -106,4 +106,4 @@ $(document).ready(function(){
 // 		console.log($("#test-button").attr("value"));
 // 	})
 });
->>>>>>> 8776be0520c7bd41433f72f0ef118560b348e980
+
