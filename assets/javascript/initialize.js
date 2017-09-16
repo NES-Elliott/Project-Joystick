@@ -8,6 +8,10 @@ $(document).ready(function(){
 		$('.parallax').parallax();
 	});
 
+	//chips
+	$('.chips').material_chip();
+	//collapsible
+
 	$(document).ready(function(){
       $('.carousel').carousel();
       	
