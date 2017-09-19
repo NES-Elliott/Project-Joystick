@@ -50,7 +50,7 @@ $(document).ready(function(){
 
 					for (var c = 0; c < 10; c++) {
 
-						var newCollectionItem = $("<a>").attr({class: "collection-item", href: "gamepage.html", value: JSON.stringify(gameIds[c])}).text(response.body[c].name);
+						// var newCollectionItem = $("<a>").attr({class: "collection-item", href: "gamepage.html", value: JSON.stringify(gameIds[c])}).text(response.body[c].name);
 
 						var newCollectionItem = $("<a>").attr({class: "collection-item", href: "gamepage.html", value: JSON.stringify(response.body[c].id)}).text(response.body[c].name);
 

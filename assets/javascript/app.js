@@ -1,14 +1,25 @@
 $(document).ready(function() {
+	var platform;
+	var queryURL;
 	 $("a").dblclick(function() {
 		event.preventDefault();
-		sessionStorage.setItem("ID", $(this).attr("hello"));
-		var href = $(this).attr('href');
-		var platform = $(this).val();
+		sessionStorage.setItem("ID", $(this).attr("value"));
+		// var href = $(this).attr('href');
+		 platform = $(this).val();
+		queryURL = "https://rcb-igdb.herokuapp.com/platform/" + platform;
+		$.ajax({
+			url: queryURL,
+			method: "GET"
+		}).done(function(response) {
+			console.log(response);
+
 		// window.location.href = "gamepage.html?"+ p + "=";
 		// window.location.href = href + "?" + platform + "="
 		// var searchCon = window.location.search;
 
 	 });
+
+
 
 	
 
