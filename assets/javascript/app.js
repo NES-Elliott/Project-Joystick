@@ -1,66 +1,63 @@
-$(document).ready(function() {
-	var platform;
-	var queryURL;
-	 $("a").dblclick(function() {
+$(document).ready(function(){
+	//double click on carousel to be brought to gamepage.html page
+	$("a").dblclick(function() {
 		event.preventDefault();
-		sessionStorage.setItem("ID", $(this).attr("value"));
-		// var href = $(this).attr('href');
-		 platform = $(this).val();
-		queryURL = "https://rcb-igdb.herokuapp.com/platform/" + platform;
-		$.ajax({
-			url: queryURL,
-			method: "GET"
-		}).done(function(response) {
-			console.log(response);
+		// var gameSite = $(this).attr('href');
 
-		// window.location.href = "gamepage.html?"+ p + "=";
+		var platform = $(this).attr("value");
+		
+
+		sessionStorage.setItem("ID", company);
+
+		window.location.href = "gamepage.html?" + platform + "=";
+				
+		
+		// console.log(href);
+
+		//opens gamepage.html
+		
 		// window.location.href = href + "?" + platform + "="
 		// var searchCon = window.location.search;
-
+		
+		// console.log(searchCon);
+		
+	
 	 });
 
+	//on click function for nav bar options
+	$(".console").on("click", function(){
+		event.preventDefault();
+		var company = $(this).attr("value");
+
+			//currently unavailable items until we get the api to work with them. adds alert for user. 
+			if (company === "PC" || company === "Nintendo Switch" || company === "Nintendo 3DS" || company === "Nintendo WiiU" ||
+				company === "Android" || company === "Apple IOS" || company === "Steam") {
+				alert("This platform is unavailable. It will be added in next update.")
+			};
 
 
-	
-
-	
-
-// var gameIds = [];
-// 				for(var b = 0; b < response.body[a].games.length; b++) {
-// 					gameIds.push(response.body[a].games[b]);
-// 				}
-// 				$.ajax({
-// 					url: "https://rcb-igdb.herokuapp.com/games/" + JSON.stringify(gameIds.slice(0, 10).join()),
-// 					method: "GET",
-// 				}).done(function(response){
-// 					console.log(response);
-// 					for (var c = 0; c < 10; c++) {
-// 						var newCollectionItem = $("#collection").attr({class: "collection-item", href: "gamepage.html", value: JSON.stringify(gameIds[c])}).text(response.body[c].name);
-// 						newCollection.append(newCollectionItem);
-// 					}
-// 				})
-
-// 	var platform = $()
-
-// 	console.log(this)
-
-	
-// 	var searchCon = window.location.search
-// 	// .replace(/\?search=/g, "/search/");
-// 	// searchCon.replace(/\?/g, "/ /");
-// 	// searchCon.replace(/\=/g, "/ /");
-// 	searchCon = searchCon.replace(/\?/g, "");
+			//working api endpoints brings user to gamepage.html for that endpoint.
+			if (company === "Playstation 4" || company === "Xbox") {
 		
-// 		console.log(searchCon);
+				sessionStorage.setItem("ID", company);
 
-// 	console.log(platform)
-// 	console.log('working')
-// 	var queryURL = "https://rcb-igdb.herokuapp.com/platform/" + searchCon;
+				window.location.href = "gamepage.html?" + company + "=";
+			};	
+		
 
-// 	$.ajax({
-// 		url: queryURL,
-// 		method: "GET"
-// 	}).done(function(response) {
-// 		console.log(response);
-// 	})
+	});
+
+	//Adds on click function for genre options in the nav bar.
+	$(".genres").on("click", function(){
+		event.preventDefault();
+		var genre = $(this).attr("value");
+		console.log(company)
+		sessionStorage.setItem("ID", genre);
+
+		window.location.href = "gamepage.html?" + company + "="
+		
+
+	});
+
+
 });
