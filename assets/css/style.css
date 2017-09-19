@@ -1,9 +1,13 @@
 /*==============*/
 /*HEADER AND NAV*/
 /*==============*/
+<<<<<<< HEAD
+
+=======
 #searchBar {
 	margin-right: 10px;
 }
+
 .chip-padding {
 	padding-left: 50px;
 }
@@ -12,13 +16,18 @@
 /*============*/
 .parallax-container {
 	height: 250px;
+
+
 }
+
+
+
 #main-content {
 	margin-top: 50px;
 	padding-left: 50px;
 }
 #game-title {
-	text-align: left;
+	text-align: center;
 }
 #other-content {
 	padding-left: 50px;

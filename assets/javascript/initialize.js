@@ -1,16 +1,28 @@
 $(document).ready(function(){
-	//parallax
+
+	//Things that are dynamically added
+		//parallax
+		//collapsible
+		//chips
 	$(document).ready(function(){
 		$('.parallax').parallax();
 	});
+
 	//chips
 	$('.chips').material_chip();
 	//collapsible
+
+	$(document).ready(function(){
+      $('.carousel').carousel();
+      	
+	
+    });
+
 	$(document).ready(function(){
 		$('.collapsible').collapsible();
 	});
-	//carousel
-	$(document).ready(function(){
-		$('.carousel').carousel();
-	});
+
+	
+	
+
 });

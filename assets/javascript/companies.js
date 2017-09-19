@@ -49,7 +49,11 @@ $(document).ready(function(){
 					console.log(response);
 
 					for (var c = 0; c < 10; c++) {
+
+						// var newCollectionItem = $("<a>").attr({class: "collection-item", href: "gamepage.html", value: JSON.stringify(gameIds[c])}).text(response.body[c].name);
+
 						var newCollectionItem = $("<a>").attr({class: "collection-item", href: "gamepage.html", value: JSON.stringify(response.body[c].id)}).text(response.body[c].name);
+
 						newCollection.append(newCollectionItem);
 					}
 				})
@@ -58,6 +62,8 @@ $(document).ready(function(){
 		sessionStorage.setItem("ID", $(this).attr("value"));
 
 	})
+
+	
 
 	$('.chips').on('chip.delete', function(e, chip){
 	// you have the deleted chip here
@@ -112,3 +118,4 @@ $(document).ready(function(){
 // 		console.log($("#test-button").attr("value"));
 // 	})
 });
+
