@@ -1,27 +1,24 @@
-/*==============*/
-/*HEADER AND NAV*/
-/*==============*/
-#searchBar {
-	margin-right: 10px;
-}
-.chip-padding {
-	padding-left: 50px;
-}
 /*============*/
 /*MAIN CONTENT*/
 /*============*/
+/*PARALLAX*/
+.background {
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+}
 .parallax-container {
 	height: 250px;
 }
-#main-content {
-	margin-top: 50px;
-	padding-left: 50px;
+/*PARALLAX END*/
+.centered {
+	text-align: center;
 }
-#game-title {
-	text-align: left;
-}
-#other-content {
-	padding-left: 50px;
+
+.bottom {
+	background-image: url("https://images.igdb.com/igdb/image/upload/t_screenshot_huge/fdfedir0ruao8xm9qcgq.jpg");
 }
 /*======*/
 /*FOOTER*/
