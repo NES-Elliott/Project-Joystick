@@ -1,6 +1,6 @@
 function html() { // Creates the HTML page
 	// PARALLAX
-	$(".parallax-container").html("<div class='cover background parallax'><img src='assets/images/background.jpg'></div>")
+	$(".parallax-container").html("<div class='cover blur parallax'><img src='assets/images/background.jpg'></div>")
 	// GAME TITLE
 	$(".game-title").text("Mario + Rabbids: Kingdom Battle");
 	document.title = "Mario + Rabbids: Kingdom Battle" + " | Joystick"
