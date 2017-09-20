@@ -1,40 +1,76 @@
 /*==============*/
 /*HEADER AND NAV*/
 /*==============*/
+<<<<<<< HEAD
+
+=======
 #searchBar {
 	margin-right: 10px;
 }
 
+.chip-padding {
+	padding-left: 50px;
+}
 /*============*/
 /*MAIN CONTENT*/
 /*============*/
-#main-content {
-	margin-top: 50px;
+.parallax-container {
+	height: 250px;
+
+
 }
 
 .nav-wrapper {
-	background-color: lightblue;
+	background-color: black;
+	color: white;
+	
+
 }
 
-.btn {
-	background-color: lightblue;
-}
 
-.page-footer {
-	background-color: lightblue;
-}
 
-.jumbotron {
-	background-blend-mode: multiply;
-	opacity: 0.8;
+.title {
+	border-bottom: 4px solid green; 
 
 }
 
 body {
-	background-image: url(../images/background.jpg);
+		border-bottom: 4px solid green;
+		background-color: #E6E6E6;
+}
+
+.page-footer {
+		background-color: black;
+	color: white;
+			border-top: 4px solid green;
 
 }
 
+#rowGreen {
+	border-top: 4px solid green;
+}
+
+h3 {
+	margin-left: 10px;
+}
+
+.Console {
+	text-align: center;
+}
+
+
+#main-content {
+	
+	padding-left: 50px;
+
+
+}
+#game-title {
+	text-align: center;
+}
+#other-content {
+	padding-left: 50px;
+}
 /*======*/
 /*FOOTER*/
 /*======*/
