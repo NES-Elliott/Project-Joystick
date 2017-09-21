@@ -1,7 +1,17 @@
-/*============*/
-/*MAIN CONTENT*/
-/*============*/
+/*==============*/
+/*HEADER AND NAV*/
+/*==============*/
+.nav-wrapper {
+	background-color: black;
+	color: white;
+}
+.title {
+	border-bottom: 4px solid green;
+}
 /*PARALLAX*/
+.parallax-container {
+	height: 250px;
+}
 .blur {
 	-webkit-filter: blur(5px);
 	-moz-filter: blur(5px);
@@ -9,19 +19,35 @@
 	-ms-filter: blur(5px);
 	filter: blur(5px);
 }
-.parallax-container {
-	height: 250px;
-}
 /*PARALLAX END*/
+
+/*============*/
+/*MAIN CONTENT*/
+/*============*/
+body {
+	border-bottom: 4px solid green;
+	background-color: #E6E6E6;
+}
+h3 {
+	margin-left: 10px;
+}
+.console {
+	text-align: center;
+}
 .centered {
 	text-align: center;
 }
-
 .bottom {
 	background-image: url("https://images.igdb.com/igdb/image/upload/t_screenshot_huge/fdfedir0ruao8xm9qcgq.jpg");
+}
+#rowGreen {
+	border-top: 4px solid green;
 }
 /*======*/
 /*FOOTER*/
 /*======*/
-
-
+.page-footer {
+	background-color: black;
+	color: white;
+	border-top: 4px solid green;
+}
