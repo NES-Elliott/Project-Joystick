@@ -59,24 +59,24 @@ function html() { // Creates the HTML page
 	// TRAILERS
 	// GAMEPLAY
 }
-console.log(sessionStorage.getItem("ID"));
-$.ajax({
-	url: "https://rcb-igdb.herokuapp.com/games/" + JSON.stringify(sessionStorage.getItem("ID")),
-	method: "GET",
-}).done(function(response){
-	console.log(response);
-	sessionStorage.setItem("name", response.body[0].name);
-	sessionStorage.setItem("cover", response.body[0].cover.url);
-	sessionStorage.setItem("coverHeight", response.body[0].cover.height);
-	sessionStorage.setItem("coverWidth", response.body[0].cover.width);
-	sessionStorage.setItem("releaseDate", response.body[0].first_release_date);
-	sessionStorage.setItem("rating", response.body[0].rating);
-	sessionStorage.setItem("summary", response.body[0].summary);
-	sessionStorage.setItem("storyline", response.body[0].storyline);
+$(document).ready(function(){
+	console.log(sessionStorage.getItem("ID"));
+	$.ajax({
+		url: "https://rcb-igdb.herokuapp.com/games/" + JSON.stringify(sessionStorage.getItem("ID")),
+		method: "GET",
+	}).done(function(response){
+		console.log(response);
+		sessionStorage.setItem("name", response.body[0].name);
+		sessionStorage.setItem("cover", response.body[0].cover.url);
+		sessionStorage.setItem("coverHeight", response.body[0].cover.height);
+		sessionStorage.setItem("coverWidth", response.body[0].cover.width);
+		sessionStorage.setItem("releaseDate", response.body[0].first_release_date);
+		sessionStorage.setItem("rating", response.body[0].rating);
+		sessionStorage.setItem("summary", response.body[0].summary);
+		sessionStorage.setItem("storyline", response.body[0].storyline);
 
-	for (i = 0; i < response.body[0].screenshots.length; i++) {
-		sessionStorage.setItem("screenshot" + i, response.body[0].screenshots[i].url);
-	}
-}).done($(document).ready(function(){
-	html();
-}));
+		for (i = 0; i < response.body[0].screenshots.length; i++) {
+			sessionStorage.setItem("screenshot" + i, response.body[0].screenshots[i].url);
+		}
+	}).done(html())
+});
