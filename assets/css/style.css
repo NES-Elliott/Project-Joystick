@@ -1,39 +1,53 @@
 /*==============*/
 /*HEADER AND NAV*/
 /*==============*/
-<<<<<<< HEAD
-
-=======
-#searchBar {
-	margin-right: 10px;
+.nav-wrapper {
+	background-color: black;
+	color: white;
 }
-
-.chip-padding {
-	padding-left: 50px;
+.title {
+	border-bottom: 4px solid green;
 }
+/*PARALLAX*/
+.parallax-container {
+	height: 250px;
+}
+.blur {
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(5px);
+}
+/*PARALLAX END*/
+
 /*============*/
 /*MAIN CONTENT*/
 /*============*/
-.parallax-container {
-	height: 250px;
-
-
+body {
+	border-bottom: 4px solid green;
+	background-color: #E6E6E6;
 }
-
-
-
-#main-content {
-	margin-top: 50px;
-	padding-left: 50px;
+h3 {
+	margin-left: 10px;
 }
-#game-title {
+.console {
 	text-align: center;
 }
-#other-content {
-	padding-left: 50px;
+.centered {
+	text-align: center;
+}
+.bottom {
+	background-image: url("https://images.igdb.com/igdb/image/upload/t_screenshot_huge/fdfedir0ruao8xm9qcgq.jpg");
+}
+#rowGreen {
+	border-top: 4px solid green;
 }
 /*======*/
 /*FOOTER*/
 /*======*/
-
-
+.page-footer {
+	background-color: black;
+	color: white;
+	border-top: 4px solid green;
+}
