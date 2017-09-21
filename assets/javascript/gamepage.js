@@ -7,8 +7,30 @@ function html() { // Creates the HTML page
 	// COVER IMAGE
 	var coverImg = "https:" + sessionStorage.getItem("cover").replace(/t_thumb/i, "t_cover_big");
 	$(".cover").html("<img src='" + coverImg + "'>")
+	// TWITTER
+	var twitterName = sessionStorage.getItem("name") + " news";
+	console.log(twitterName)
+	$.ajax({
+		url: "https://rcb-api.herokuapp.com/twitter-search/" + twitterName,
+		method: "GET"
+	}).done(function(response){
+		console.log(response)
+		if (response.statuses.length === 0) {
+			$(".video-container").append("<p class='centered'>No tweets about this game.</p>")
+		} else if (response.statuses.length >= 5) {
+			for (var a = 0; a < 5; a++) {
+				var newTweet = response.statuses[a].text
+				$(".video-container").append(newTweet);
+			}
+		} else {
+			for (var a = 0; a < response.statuses.length; a++) {
+				var newTweet = response.statuses[a].text
+				$(".video-container").append("<p>" + newTweet + "</p>" + "<hr>");
+			}
+		}
+	})
 	// VIDEO TRAILER
-	$(".video-container").html("<iframe width='560' height='315' src='https://www.youtube.com/embed/DqH-iwA0ZmU' frameborder='0' allowfullscreen></iframe>")
+	// $(".video-container").html("<iframe width='560' height='315' src='https://www.youtube.com/embed/DqH-iwA0ZmU' frameborder='0' allowfullscreen></iframe>")
 	// RATING
 	if (sessionStorage.getItem("rating") === "undefined") {
 		$("#rating").html("<div class='indeterminate'></div>");
@@ -24,11 +46,9 @@ function html() { // Creates the HTML page
 		$("#description").text("No description offered.")
 	}else if (sessionStorage.getItem("summary") === "undefined") {
 		$("#description").text(sessionStorage.getItem("storyline"));
-		console.log("works")
 	}
 	// IMAGES
 	for (var i = 0; i < 5; i++) {
-		console.log(sessionStorage.getItem("screenshot" + i));
 		if (sessionStorage.getItem("screenshot" + i)) {
 			var screenshotLink = "https:" + sessionStorage.getItem("screenshot" + i).replace(/t_thumb/i, "t_screenshot_huge");
 			var screenshot = "<a class='carousel-item'><img src='" + screenshotLink + "'></a>";
