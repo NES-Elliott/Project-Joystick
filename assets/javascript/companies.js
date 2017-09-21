@@ -22,6 +22,12 @@ $(document).ready(function(){
 		$("#platform-collapsible").html("");
 		var newCollapsible = $("<ul>").attr({class: "collapsible", 'data-collapsible': "accordion"});
 		$("#platform-collapsible").append(newCollapsible);
+		//Creates the Collapsible from MaterializeCSS
+		var newCollapsibleItem = $("<li>")
+		var newCollapsibleHeader = $("<div>").attr({class: "collapsible-header"}).text(platform.charAt(0).toUpperCase() + platform.slice(1)).appendTo(newCollapsibleItem);
+		var newCollapsibleBody = $("<div>").attr({class: "collapsible-body"}).appendTo(newCollapsibleItem);
+		var newCollection = $("<div>").attr({class: "collection"}).appendTo(newCollapsibleBody);
+		newCollapsible.append(newCollapsibleItem);
 		//Ajax call for platform endpoint
 		$.ajax({
 			url: queryURL,
@@ -31,12 +37,6 @@ $(document).ready(function(){
 
 			for (var a = 0; a < response.body.length; a++) { //Cycles through the different systems of that platform
 				if (response.body[a].name !== "Nintendo PlayStation") {
-					//Creates the Collapsible from MaterializeCSS
-					var newCollapsibleItem = $("<li>")
-					var newCollapsibleHeader = $("<div>").attr({class: "collapsible-header"}).text(response.body[a].name).appendTo(newCollapsibleItem);
-					var newCollapsibleBody = $("<div>").attr({class: "collapsible-body"}).appendTo(newCollapsibleItem);
-					var newCollection = $("<div>").attr({class: "collection"}).appendTo(newCollapsibleBody);
-					newCollapsible.append(newCollapsibleItem);
 					// Acquires GameIDs for Ajax call to hit games endpoint
 					var gameIds = [];
 					for(var b = 0; b < response.body[a].games.length; b++) {
